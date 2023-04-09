@@ -10,6 +10,9 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
+        /**
+         * 3 seconds delay and go to MainActivity
+         */
         Handler().postDelayed(Runnable {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
