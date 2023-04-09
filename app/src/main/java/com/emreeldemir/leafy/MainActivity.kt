@@ -13,5 +13,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Handle click and Login
+        binding.loginButton.setOnClickListener {
+            TODO()
+        }
+
+        // Handle click, Skip and go to Home Screen
+        binding.skipButton.setOnClickListener {
+            TODO()
+        }
     }
 }
