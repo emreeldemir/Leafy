@@ -13,4 +13,6 @@
     <string name="name_hint">Name</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="sign_up">SIGN UP</string>
+    <string name="dashboard_user">Dashboard User</string>
+    <string name="lorem_ipsum_com">lorem@ipsum.com</string>
 </resources>
