@@ -1,5 +1,6 @@
 package com.emreeldemir.leafy
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.emreeldemir.leafy.databinding.ActivityMainBinding
@@ -15,12 +16,12 @@ class MainActivity : AppCompatActivity() {
 
         // Handle click and Login
         binding.loginButton.setOnClickListener {
-            TODO()
+            startActivity(Intent(this, LoginActivity::class.java))
         }
 
-        // Handle click, Skip and go to Home Screen
+        // Handle click, Skip and Go to Main Screen
         binding.skipButton.setOnClickListener {
-            TODO()
+            startActivity(Intent(this, DashboardUserActivity::class.java))
         }
     }
 }
