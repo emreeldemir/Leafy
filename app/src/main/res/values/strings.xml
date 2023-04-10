@@ -3,4 +3,10 @@
     <string name="welcome_to_leafy">Welcome to Leafy</string>
     <string name="login">LOGIN</string>
     <string name="continue_without_login">CONTINUE WITHOUT LOGIN</string>
+    // Sign up bold and underlined
+    <string name="new_user_signup">Not have Account? <b> <u>Sign Up</u> </b> </string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="password_hint">Password</string>
+    <string name="email_hint">Email</string>
+    <string name="welcome">Welcome</string>
 </resources>
