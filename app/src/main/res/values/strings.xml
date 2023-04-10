@@ -9,4 +9,8 @@
     <string name="password_hint">Password</string>
     <string name="email_hint">Email</string>
     <string name="welcome">Welcome</string>
+    <string name="create_account">Create \nAccount</string>
+    <string name="name_hint">Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up">SIGN UP</string>
 </resources>

@@ -8,7 +8,7 @@
     tools:context=".LoginActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/create_account_imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,13 +33,15 @@
                 android:layout_marginTop="100dp"
                 android:layout_marginBottom="100dp"
                 android:fontFamily="serif-monospace"
-                android:text="Create \nAccount"
+                android:text="@string/create_account"
                 android:textColor="#FFFFFF"
-                android:textSize="40dp"
+                android:textSize="40sp"
                 android:textStyle="bold" />
 
+                <!-- Name -->
+
             <EditText
-                android:id="@+id/editTextEmail2"
+                android:id="@+id/editTextName"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="32dp"
@@ -49,10 +51,12 @@
                 android:drawableStart="@drawable/username"
                 android:drawablePadding="16dp"
                 android:ems="10"
-                android:hint="Name"
+                android:hint="@string/name_hint"
                 android:inputType="textEmailAddress"
                 android:padding="8dp"
                 android:textColorHint="#FFFFFF" />
+
+                <!-- Email -->
 
             <EditText
                 android:id="@+id/editTextEmail"
@@ -65,11 +69,13 @@
                 android:drawableStart="@drawable/email"
                 android:drawablePadding="16dp"
                 android:ems="10"
-                android:hint="Email"
+                android:hint="@string/email_hint"
                 android:inputType="textEmailAddress"
                 android:padding="8dp"
                 android:textColorHint="#FFFFFF" />
 
+
+                <!-- Password -->
 
             <EditText
                 android:id="@+id/editTextPassword"
@@ -82,13 +88,15 @@
                 android:drawableStart="@drawable/password"
                 android:drawablePadding="16dp"
                 android:ems="10"
-                android:hint="Password"
+                android:hint="@string/password_hint"
                 android:inputType="textPassword"
                 android:padding="8dp"
                 android:textColorHint="#FFFFFF" />
 
+                <!-- Confirm Password -->
+
             <EditText
-                android:id="@+id/editTextPassword2"
+                android:id="@+id/editTextCPassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="32dp"
@@ -98,13 +106,15 @@
                 android:drawableStart="@drawable/password"
                 android:drawablePadding="16dp"
                 android:ems="10"
-                android:hint="Confirm Password"
+                android:hint="@string/confirm_password"
                 android:inputType="textPassword"
                 android:padding="8dp"
                 android:textColorHint="#FFFFFF" />
 
+                <!-- Sign Up Button -->
+
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button"
+                android:id="@+id/signUpButton"
                 android:layout_width="320dp"
                 android:layout_height="55dp"
                 android:layout_gravity="center"
@@ -113,7 +123,7 @@
                 android:layout_marginEnd="32dp"
                 android:background="@drawable/button_bg_01"
                 android:padding="16dp"
-                android:text="SIGN UP"
+                android:text="@string/sign_up"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp" />
 

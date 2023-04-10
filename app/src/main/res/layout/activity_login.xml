@@ -92,7 +92,7 @@
                 <!-- Login Button -->
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/buttonLogin"
+                android:id="@+id/loginButton"
                 android:layout_width="320dp"
                 android:layout_height="55dp"
                 android:layout_gravity="center"
