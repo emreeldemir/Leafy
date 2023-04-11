@@ -57,7 +57,7 @@ class SignUpActivity : AppCompatActivity() {
         if (name.isEmpty()) {
             Toast.makeText(this, "Please enter name", Toast.LENGTH_SHORT).show()
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            Toast.makeText(this, "Invalid email pattern", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Invalid email format", Toast.LENGTH_SHORT).show()
         } else if (password.isEmpty()) {
             Toast.makeText(this, "Please enter password", Toast.LENGTH_SHORT).show()
         } else if (cPassword.isEmpty()) {
