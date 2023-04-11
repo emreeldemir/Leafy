@@ -34,7 +34,7 @@
                 android:layout_marginBottom="100dp"
                 android:fontFamily="serif-monospace"
                 android:text="@string/create_account"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/white"
                 android:textSize="40sp"
                 android:textStyle="bold" />
 
@@ -54,7 +54,7 @@
                 android:hint="@string/name_hint"
                 android:inputType="textEmailAddress"
                 android:padding="8dp"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/midGrey"
                 android:textColor="@color/white"/>
 
                 <!-- Email -->
@@ -73,7 +73,7 @@
                 android:hint="@string/email_hint"
                 android:inputType="textEmailAddress"
                 android:padding="8dp"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/midGrey"
                 android:textColor="@color/white"/>
 
 
@@ -93,7 +93,7 @@
                 android:hint="@string/password_hint"
                 android:inputType="textPassword"
                 android:padding="8dp"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/midGrey"
                 android:textColor="@color/white" />
 
                 <!-- Confirm Password -->
@@ -112,7 +112,7 @@
                 android:hint="@string/confirm_password"
                 android:inputType="textPassword"
                 android:padding="8dp"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/midGrey"
                 android:textColor="@color/white" />
 
                 <!-- Sign Up Button -->
@@ -128,7 +128,7 @@
                 android:background="@drawable/button_bg_01"
                 android:padding="16dp"
                 android:text="@string/sign_up"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
 
 
