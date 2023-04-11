@@ -61,9 +61,13 @@ class LoginActivity : AppCompatActivity() {
         // Validate Data
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             Toast.makeText(this, "Invalid email format", Toast.LENGTH_SHORT).show()
-        } else if (password.isEmpty()) {
+        }
+
+        else if (password.isEmpty()) {
             Toast.makeText(this, "Please enter password", Toast.LENGTH_SHORT).show()
-        } else {
+        }
+
+        else {
             loginUser()
         }
 
@@ -112,7 +116,9 @@ class LoginActivity : AppCompatActivity() {
                         // User is logged in, start User Dashboard
                         startActivity(Intent(this@LoginActivity, DashboardUserActivity::class.java))
                         finish()
-                    } else if(userType == "admin") {
+                    }
+
+                    else if (userType == "admin") {
                         // Admin is logged in, start Admin Dashboard
                         startActivity(Intent(this@LoginActivity, DashboardAdminActivity::class.java))
                         finish()
