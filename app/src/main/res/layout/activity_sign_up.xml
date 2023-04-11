@@ -45,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="32dp"
                 android:background="@drawable/edittext_bg"
                 android:drawableStart="@drawable/username"
@@ -54,7 +54,8 @@
                 android:hint="@string/name_hint"
                 android:inputType="textEmailAddress"
                 android:padding="8dp"
-                android:textColorHint="#FFFFFF" />
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"/>
 
                 <!-- Email -->
 
@@ -63,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="32dp"
                 android:background="@drawable/edittext_bg"
                 android:drawableStart="@drawable/email"
@@ -72,7 +73,8 @@
                 android:hint="@string/email_hint"
                 android:inputType="textEmailAddress"
                 android:padding="8dp"
-                android:textColorHint="#FFFFFF" />
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"/>
 
 
                 <!-- Password -->
@@ -82,7 +84,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="32dp"
                 android:background="@drawable/edittext_bg"
                 android:drawableStart="@drawable/password"
@@ -91,7 +93,8 @@
                 android:hint="@string/password_hint"
                 android:inputType="textPassword"
                 android:padding="8dp"
-                android:textColorHint="#FFFFFF" />
+                android:textColorHint="@color/white"
+                android:textColor="@color/white" />
 
                 <!-- Confirm Password -->
 
@@ -100,7 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="32dp"
                 android:background="@drawable/edittext_bg"
                 android:drawableStart="@drawable/password"
@@ -109,7 +112,8 @@
                 android:hint="@string/confirm_password"
                 android:inputType="textPassword"
                 android:padding="8dp"
-                android:textColorHint="#FFFFFF" />
+                android:textColorHint="@color/white"
+                android:textColor="@color/white" />
 
                 <!-- Sign Up Button -->
 
@@ -119,7 +123,7 @@
                 android:layout_height="55dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginEnd="32dp"
                 android:background="@drawable/button_bg_01"
                 android:padding="16dp"
