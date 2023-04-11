@@ -38,7 +38,7 @@ class LoginActivity : AppCompatActivity() {
 
         // Init Progress Dialog
         progressDialog = ProgressDialog(this)
-        progressDialog.setTitle("Please wait")
+        progressDialog.setTitle("Please Wait")
         progressDialog.setCanceledOnTouchOutside(false)
 
         // Handle Click, Not have account, go to register screen
@@ -60,11 +60,11 @@ class LoginActivity : AppCompatActivity() {
 
         // Validate Data
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            Toast.makeText(this, "Invalid email format", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Invalid Email Format", Toast.LENGTH_SHORT).show()
         }
 
         else if (password.isEmpty()) {
-            Toast.makeText(this, "Please enter password", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Please Enter The Password", Toast.LENGTH_SHORT).show()
         }
 
         else {

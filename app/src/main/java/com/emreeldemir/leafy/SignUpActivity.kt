@@ -34,7 +34,7 @@ class SignUpActivity : AppCompatActivity() {
 
         // Init Progress Dialog
         progressDialog = ProgressDialog(this)
-        progressDialog.setTitle("Please wait")
+        progressDialog.setTitle("Please Wait")
         progressDialog.setCanceledOnTouchOutside(false)
 
         // Handle Click, Start Register User
@@ -55,15 +55,15 @@ class SignUpActivity : AppCompatActivity() {
 
         // Validate Data
         if (name.isEmpty()) {
-            Toast.makeText(this, "Please enter name", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Please Enter Your Name", Toast.LENGTH_SHORT).show()
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            Toast.makeText(this, "Invalid email format", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Invalid Email Format", Toast.LENGTH_SHORT).show()
         } else if (password.isEmpty()) {
-            Toast.makeText(this, "Please enter password", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Please Enter The Password", Toast.LENGTH_SHORT).show()
         } else if (cPassword.isEmpty()) {
-            Toast.makeText(this, "Please confirm password", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Please Confirm The Password", Toast.LENGTH_SHORT).show()
         } else if (password != cPassword) {
-            Toast.makeText(this, "Password doesn't match", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Password Doesn't Match", Toast.LENGTH_SHORT).show()
         } else {
             createUserAccount()
         }
@@ -79,17 +79,13 @@ class SignUpActivity : AppCompatActivity() {
         // Create user in Firebase Auth
         firebaseAuth.createUserWithEmailAndPassword(email, password)
             .addOnSuccessListener {
-                // Account created successfully
-                progressDialog.dismiss()
-                Toast.makeText(this, "Account Created Successfully", Toast.LENGTH_SHORT).show()
-
                 // Add user info to Firebase Realtime Database
                 updateUserInfo()
             }
             .addOnFailureListener { e ->
                 // Failed to create account
                 progressDialog.dismiss()
-                Toast.makeText(this, "Failed to create account: ${e.message}", Toast.LENGTH_SHORT)
+                Toast.makeText(this, "Failed to Create Account: ${e.message}", Toast.LENGTH_SHORT)
                     .show()
             }
 
@@ -119,14 +115,14 @@ class SignUpActivity : AppCompatActivity() {
             .addOnSuccessListener {
                 // User info saved, open user dashboard
                 progressDialog.dismiss()
-                Toast.makeText(this, "Account created...", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Account Created Successfully", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this@SignUpActivity, DashboardUserActivity::class.java))
                 finish()
             }
             .addOnFailureListener { e ->
                 // Failed to save user info
                 progressDialog.dismiss()
-                Toast.makeText(this, "Failed to save user info: ${e.message}", Toast.LENGTH_SHORT)
+                Toast.makeText(this, "Failed to Save User Info: ${e.message}", Toast.LENGTH_SHORT)
                     .show()
             }
 
