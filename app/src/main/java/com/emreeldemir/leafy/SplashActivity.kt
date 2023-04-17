@@ -13,16 +13,22 @@ import com.google.firebase.database.ValueEventListener
 
 class SplashActivity : AppCompatActivity() {
 
-    // Firebase Auth
+    /**
+     * Firebase Authentication
+     */
     private lateinit var firebaseAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        // Init Firebase Auth
+        /**
+         * Init Firebase Auth
+         */
         firebaseAuth = FirebaseAuth.getInstance()
 
-        // 1.75 seconds delay and then go to Main Page
+        /**
+         * 1.75 seconds delay and then go to Main Page
+         */
         Handler().postDelayed(Runnable {
             checkUser()
         }, 1750) // it means 1.75 seconds
@@ -30,7 +36,9 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun checkUser() {
-        // Check if user is logged in or not
+        /**
+         * Check if user is logged in or not
+         */
         val firebaseUser = firebaseAuth.currentUser
 
         if (firebaseUser == null) {

@@ -12,13 +12,19 @@ import com.google.firebase.database.FirebaseDatabase
 
 class SignUpActivity : AppCompatActivity() {
 
-    // View Binding
+    /**
+     * View Binding
+     */
     private lateinit var binding: ActivitySignUpBinding
 
-    // Firebase Authentication
+    /**
+     * Firebase Authentication
+     */
     private lateinit var firebaseAuth: FirebaseAuth
 
-    // Progress Dialog
+    /**
+     * Progress Dialog
+     */
     private lateinit var progressDialog: ProgressDialog
 
     private var name = ""
@@ -29,15 +35,21 @@ class SignUpActivity : AppCompatActivity() {
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Init Firebase Auth
+        /**
+         * Init Firebase Auth
+         */
         firebaseAuth = FirebaseAuth.getInstance()
 
-        // Init Progress Dialog
+        /**
+         * Init Progress Dialog
+         */
         progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Please Wait")
         progressDialog.setCanceledOnTouchOutside(false)
 
-        // Handle Click, Start Register User
+        /**
+         * Handle Click, Start Register User
+         */
 
         binding.signUpButton.setOnClickListener {
             validateData()
@@ -47,7 +59,9 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun validateData() {
-        // Get (Input) Data
+        /**
+         * Get (Input) Data
+         */
         name = binding.editTextName.text.toString().trim()
         email = binding.editTextEmail.text.toString().trim()
         password = binding.editTextPassword.text.toString().trim()
@@ -72,7 +86,9 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun createUserAccount() {
-        // Show Progress Dialog
+        /**
+         * Show Progress Dialog
+         */
         progressDialog.setMessage("Creating Account...")
         progressDialog.show()
 
@@ -100,7 +116,9 @@ class SignUpActivity : AppCompatActivity() {
         // Get uid of current user
         val uid = firebaseAuth.uid
 
-        // Setup data to save
+        /**
+         * Setup data to save
+         */
         val hashMap = HashMap<String, Any?>()
         hashMap["uid"] = uid
         hashMap["email"] = email
@@ -109,7 +127,9 @@ class SignUpActivity : AppCompatActivity() {
         hashMap["userType"] = "user"
         hashMap["timestamp"] = timestamp
 
-        // Save to Firebase Realtime Database
+        /**
+         * Save to Firebase Realtime Database
+         */
         val ref = FirebaseDatabase.getInstance().getReference("Users")
         ref.child(uid!!).setValue(hashMap)
             .addOnSuccessListener {

@@ -8,22 +8,30 @@ import com.google.firebase.auth.FirebaseAuth
 
 class DashboardUserActivity : AppCompatActivity() {
 
-    // View Binding
+    /**
+     * View Binding
+     */
     private lateinit var binding: ActivityDashboardUserBinding
 
-    // Firebase Auth
+    /**
+     * Firebase Authentication
+     */
     private lateinit var firebaseAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDashboardUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Init Firebase Auth
+        /**
+         * Init Firebase Auth
+         */
         firebaseAuth = FirebaseAuth.getInstance()
 
         checkUser()
 
-        // Handle Click, Logout
+        /**
+         * Handle Click, Logout
+         */
         binding.logoutButton.setOnClickListener {
             firebaseAuth.signOut()
             startActivity(Intent(this, MainActivity::class.java))
@@ -33,7 +41,9 @@ class DashboardUserActivity : AppCompatActivity() {
     }
 
     private fun checkUser() {
-// Get Current User
+        /**
+         * Get Current User
+         */
         val firebaseUser = firebaseAuth.currentUser
 
         if (firebaseUser == null) {

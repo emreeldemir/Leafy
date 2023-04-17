@@ -16,13 +16,19 @@ import com.google.firebase.database.ValueEventListener
 
 class LoginActivity : AppCompatActivity() {
 
-    // View Binding
+    /**
+     * View Binding
+     */
     private lateinit var binding: ActivityLoginBinding
 
-    // Firebase Authentication
+    /**
+     * Firebase Authentication
+     */
     private lateinit var firebaseAuth: FirebaseAuth
 
-    // Progress Dialog
+    /**
+     * Progress Dialog
+     */
     private lateinit var progressDialog: ProgressDialog
 
     private var email = ""
@@ -33,20 +39,28 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Init Firebase Auth
+        /**
+         * Init Firebase Auth
+         */
         firebaseAuth = FirebaseAuth.getInstance()
 
-        // Init Progress Dialog
+        /**
+         * Init Progress Dialog
+         */
         progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Please Wait")
         progressDialog.setCanceledOnTouchOutside(false)
 
-        // Handle Click, Not have account, go to register screen
+        /**
+         * Handle Click, Not have account, go to register screen
+         */
         binding.noAccountTextView.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))
         }
 
-        // Handle Click, Start Login
+        /**
+         * Handle Click, Start Login
+         */
         binding.loginButton.setOnClickListener {
             validateData()
         }
@@ -54,11 +68,15 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun validateData() {
-        // Get (Input) Data
+        /**
+         * Get (Input) Data
+         */
         email = binding.editTextEmail.text.toString().trim()
         password = binding.editTextPassword.text.toString().trim()
 
-        // Validate Data
+        /**
+         * Validate Data
+         */
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             Toast.makeText(this, "Invalid Email Format", Toast.LENGTH_SHORT).show()
         }
@@ -75,17 +93,21 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun loginUser() {
-        // Show Progress Dialog
+        /**
+         * Show Progress Dialog
+         */
         progressDialog.setMessage("Logging In...")
         progressDialog.show()
 
-        // Login using firebase
+        /**
+         * Login Using Firebase
+         */
         firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnSuccessListener {
                 // Login Success
                 progressDialog.dismiss()
                 // Get User Info
-                    checkUser()
+                checkUser()
 
             }
             .addOnFailureListener { e ->
@@ -97,8 +119,10 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun checkUser() {
-        // If User - Start User Dashboard
-        // If Admin - Start Admin Dashboard
+        /**
+         * If User - Start User Dashboard
+         * If Admin - Start Admin Dashboard
+         */
         progressDialog.setMessage("Checking User...")
 
         val firebaseUser = firebaseAuth.currentUser!!
