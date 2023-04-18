@@ -16,4 +16,5 @@
     <string name="dashboard_user">Dashboard User</string>
     <string name="lorem_ipsum_com">lorem@ipsum.com</string>
     <string name="dashboard_admin">Dashboard Admin</string>
+    <string name="add_category">+ Add Category</string>
 </resources>

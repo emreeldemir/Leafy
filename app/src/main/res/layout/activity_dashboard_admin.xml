@@ -47,4 +47,50 @@
 
     </RelativeLayout>
 
+
+    <!-- Bottom Layout -->
+    <LinearLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp">
+
+
+        <!-- Add Category Button -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addCategoryButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_add_category"
+            android:minHeight="50dp"
+            android:text="@string/add_category"
+            android:textAllCaps="false"
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/white" />
+
+        <!-- Add PDF Fab -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addPdfFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/colorPrimary"
+            app:fabCustomSize="50dp"
+            app:tint="@color/white"
+            android:src="@drawable/ic_pdf_white" />
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
 </RelativeLayout>

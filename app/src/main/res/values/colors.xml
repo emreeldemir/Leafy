@@ -12,4 +12,5 @@
     <color name="midGrey">#918A8A</color>
     <color name="darkGrey">#5F5B5B</color>
     <color name="toolbarColor">#264465</color>
+    <color name="add_category_color">#1256DF</color>
 </resources>
