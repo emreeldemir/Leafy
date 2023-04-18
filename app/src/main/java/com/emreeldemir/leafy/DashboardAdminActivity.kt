@@ -37,6 +37,13 @@ class DashboardAdminActivity : AppCompatActivity() {
             checkUser()
         }
 
+        /**
+         * Handle Click, Start Add Category Page
+         */
+        binding.addCategoryButton.setOnClickListener {
+            startActivity(Intent(this, CategoryAddActivity::class.java))
+        }
+
     }
 
     private fun checkUser() {
