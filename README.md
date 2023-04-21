@@ -29,7 +29,7 @@ All authentication, registration and data operations are done with **"Firebase"*
 - "Admin" users can add book categories, upload these books as PDF and search.
 - "Users" can view the books (clicking on the book will show the details of the book), download these books as PDF and search,
 can also create a favorite book list by adding them to favorites.
-- A profile page is available for each user. User information, user profile picture and favorite books are on this page.
-- The "Admin" user can delete any books.
+- A profile page is available for each user. User info, user profile picture and favorite books are on this page.
+- The "Admin" can delete any book.
 - Users are informed with "Toast" messages and "Progress Dialog" in almost every action they take,
 relevant warning messages are also given where incorrect entries are made.
