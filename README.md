@@ -18,18 +18,18 @@ All authentication, registration and data operations are done with **"Firebase"*
 
 ### App Features:
 
-- The application is developed with **"Kotlin"** in **"Android Studio"**.
+- The application is developed with "Kotlin" in "Android Studio".
 - You can create an account and log in. (There is an option to use the app without creating an account)
-- There is a button to log out of the account in the user dashboard panels. 
+- There is a button to log out of the account in the User Dashboard panels. 
 - The account you are logged into goes through verification processes.
 - If you forget your password, you can reset your password.
-- If you have logged into the application before, this information will be checked on the "splash" screen and you will be logged in automatically.
-- There are two types of users in the application, "user" and "admin".
+- If you have logged into the application before, this information will be checked on the "Splash" screen and you will be logged in automatically.
+- There are two types of users in the application, "User" and "Admin".
 - Each user has a separate dashboard according to their own authority.
 - "Admin" users can add book categories, upload these books as PDF and search.
 - "Users" can view the books (clicking on the book will show the details of the book), download these books as PDF and search,
 can also create a favorite book list by adding them to favorites.
 - A profile page is available for each user. User information, user profile picture and favorite books are on this page.
-- The "admin" user can delete any books.
+- The "Admin" user can delete any books.
 - Users are informed with "Toast" messages and "Progress Dialog" in almost every action they take,
 relevant warning messages are also given where incorrect entries are made.
