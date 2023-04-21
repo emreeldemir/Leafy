@@ -4,7 +4,7 @@
 
 ---
 
-<h4 align="center"> "Leafy" is a Library/Book application </h4>
+<h3 align="center"> "Leafy" is a Library/Book application </h3>
 
 [Mockup in Figma 🔗](https://www.figma.com/file/J9oC00repkf14rg8FCGVbr/Leafy?node-id=0%3A1&t=DFxDTsPgKuQeAnCS-1) <br>
 
