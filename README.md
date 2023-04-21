@@ -27,7 +27,9 @@ All authentication, registration and data operations are done with **"Firebase"*
 - There are two types of users in the application, "user" and "admin".
 - Each user has a separate dashboard according to their own authority.
 - "Admin" users can add book categories, upload these books as PDF and search.
-- "Users" can view the books (clicking on the book will show the details of the book), download these books as PDF and search.
-They can also create a favorite book list by adding them to favorites.
+- "Users" can view the books (clicking on the book will show the details of the book), download these books as PDF and search,
+can also create a favorite book list by adding them to favorites.
 - A profile page is available for each user. User information, user profile picture and favorite books are on this page.
 - The "admin" user can delete any books.
+- Users are informed with "Toast" messages and "Progress Dialog" in almost every action they take,
+relevant warning messages are also given where incorrect entries are made.
