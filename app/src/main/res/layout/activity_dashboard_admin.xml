@@ -78,7 +78,7 @@
             android:id="@+id/addPdfFab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:backgroundTint="@color/colorPrimary"
+            app:backgroundTint="@color/add_category_color"
             app:fabCustomSize="50dp"
             app:tint="@color/white"
             android:src="@drawable/ic_pdf_white" />
