@@ -4,7 +4,7 @@
 
 ---
 
-### "Leafy" is a Library/Book application <br>
+<h4 align="center"> "Leafy" is a Library/Book application </h4>
 
 [Mockup in Figma 🔗](https://www.figma.com/file/J9oC00repkf14rg8FCGVbr/Leafy?node-id=0%3A1&t=DFxDTsPgKuQeAnCS-1) <br>
 
@@ -12,7 +12,7 @@
 
 All authentication, registration and data operations are done with **"Firebase"**. <br>
 
-"Material Design Kit" and "Material Design Icons" were used in the design. <br>
+"Material Design Kit", "Material Design Icons" and various plugins were used in the design. <br>
 
 ---
 
