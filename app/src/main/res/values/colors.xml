@@ -13,4 +13,5 @@
     <color name="darkGrey">#5F5B5B</color>
     <color name="toolbarColor">#264465</color>
     <color name="add_category_color">#343434</color>
+    <color name="submit_color">#C55C6B</color>
 </resources>
