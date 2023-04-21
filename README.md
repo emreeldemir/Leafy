@@ -30,4 +30,4 @@ All authentication, registration and data operations are done with **"Firebase"*
 - "Users" can view the books (clicking on the book will show the details of the book), download these books as PDF and search.
 They can also create a favorite book list by adding them to favorites.
 - A profile page is available for each user. User information, user profile picture and favorite books are on this page.
-- The "admin" user can delete any books they want.
+- The "admin" user can delete any books.
