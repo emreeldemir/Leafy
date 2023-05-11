@@ -14,4 +14,6 @@
     <color name="toolbarColor">#264465</color>
     <color name="add_category_color">#343434</color>
     <color name="submit_color">#C55C6B</color>
+    <color name="gray03">#EDEDED</color>
+
 </resources>
