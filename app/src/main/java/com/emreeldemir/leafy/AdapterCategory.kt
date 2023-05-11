@@ -72,12 +72,6 @@ class AdapterCategory: RecyclerView.Adapter<AdapterCategory.HolderCategory> {
                 }
         }
 
-        // Handle view clicks
-        holder.itemView.setOnClickListener {
-            // Handle item clicks, show item details (in popup maybe?)
-        }
-
-
     }
 
     private fun deleteCategory(model: ModelCategory, holder: HolderCategory) {
