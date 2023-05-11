@@ -31,24 +31,33 @@ class FilterCategory: Filter {
 
             // Avoid case sensitivity
             constraint = constraint.toString().uppercase()
-            val filteredModel: ArrayList<ModelCategory> = ArrayList()
+            val filteredModels: ArrayList<ModelCategory> = ArrayList()
 
             for (i in 0 until filterList.size) {
 
                 // Validate
                 if(filterList[i].category.uppercase().contains(constraint)) {
                     // Add to filtered list
-                    filteredModel.add(filterList[i])
+                    filteredModels.add(filterList[i])
                 }
             }
-
+            results.count = filteredModels.size
+            results.values = filteredModels
 
         }
 
+        else {
+            // Search value is null/empty
+            results.count = filterList.size
+            results.values = filterList
+        }
+
+        // Don't miss it
+        return results
     }
 
     override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
-        TODO("Not yet implemented")
+
     }
 
 
