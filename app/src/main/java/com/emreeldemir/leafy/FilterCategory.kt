@@ -56,7 +56,13 @@ class FilterCategory: Filter {
         return results
     }
 
-    override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+    override fun publishResults(constraint: CharSequence?, results: FilterResults) {
+
+        // Apply filter changes
+        adapterCategory.categoryArrayList = results.values as ArrayList<ModelCategory>
+
+        // Notify changes
+        adapterCategory.notifyDataSetChanged()
 
     }
 

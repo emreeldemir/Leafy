@@ -5,6 +5,8 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
@@ -12,10 +14,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.emreeldemir.leafy.databinding.RowCategoryBinding
 import com.google.firebase.database.FirebaseDatabase
 
-class AdapterCategory: RecyclerView.Adapter<AdapterCategory.HolderCategory> {
+class AdapterCategory: RecyclerView.Adapter<AdapterCategory.HolderCategory>, Filterable {
 
     private val context: Context
-    private val categoryArrayList: ArrayList<ModelCategory>
+    public var categoryArrayList: ArrayList<ModelCategory>
+    private var filterList: ArrayList<ModelCategory>
+
+    private var filter: FilterCategory? = null
 
     private lateinit var binding: RowCategoryBinding
 
@@ -26,6 +31,8 @@ class AdapterCategory: RecyclerView.Adapter<AdapterCategory.HolderCategory> {
     constructor(context: Context, categoryArrayList: ArrayList<ModelCategory>) {
         this.context = context
         this.categoryArrayList = categoryArrayList
+        this.filterList = categoryArrayList
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HolderCategory {
@@ -105,7 +112,12 @@ class AdapterCategory: RecyclerView.Adapter<AdapterCategory.HolderCategory> {
         val deleteButton: ImageButton = binding.deleteButton
     }
 
-
+    override fun getFilter(): Filter {
+        if(filter == null) {
+            filter = FilterCategory(filterList, this)
+        }
+        return filter as FilterCategory
+    }
 
 
 }
