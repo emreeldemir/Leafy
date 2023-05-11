@@ -32,7 +32,6 @@ class AdapterCategory: RecyclerView.Adapter<AdapterCategory.HolderCategory>, Fil
         this.context = context
         this.categoryArrayList = categoryArrayList
         this.filterList = categoryArrayList
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HolderCategory {
@@ -40,11 +39,6 @@ class AdapterCategory: RecyclerView.Adapter<AdapterCategory.HolderCategory>, Fil
         binding = RowCategoryBinding.inflate(LayoutInflater.from(context), parent, false)
 
         return HolderCategory(binding.root)
-    }
-
-    override fun getItemCount(): Int {
-        // Number of items in the list
-        return categoryArrayList.size
     }
 
     override fun onBindViewHolder(holder: HolderCategory, position: Int) {
@@ -57,13 +51,15 @@ class AdapterCategory: RecyclerView.Adapter<AdapterCategory.HolderCategory>, Fil
         val model = categoryArrayList[position]
         val id = model.id
         val category = model.category
-        val timestamp = model.timestamp
         val uid = model.uid
+        val timestamp = model.timestamp
 
         // Set data
         holder.categoryTextView.text = category
 
+        // Handle click, Delete Category
         holder.deleteButton.setOnClickListener {
+
             // Confirm before delete
             val builder = AlertDialog.Builder(context)
             builder.setTitle("Delete")
@@ -77,9 +73,17 @@ class AdapterCategory: RecyclerView.Adapter<AdapterCategory.HolderCategory>, Fil
                 .setNegativeButton("Cancel") {a, d->
                     a.dismiss()
                 }
+                .show()
         }
 
     }
+
+
+    override fun getItemCount(): Int {
+        // Number of items in the list
+        return categoryArrayList.size
+    }
+
 
     private fun deleteCategory(model: ModelCategory, holder: HolderCategory) {
         /**
@@ -106,7 +110,7 @@ class AdapterCategory: RecyclerView.Adapter<AdapterCategory.HolderCategory>, Fil
     /**
      * View Holder Class to hold or init UI Views for row_category.xml
      */
-    inner class HolderCategory(itemView: View): RecyclerView.ViewHolder(itemView) {
+    inner class HolderCategory(itemView: View) : RecyclerView.ViewHolder(itemView) {
         // Init UI Views
         val categoryTextView: TextView = binding.categoryTextView
         val deleteButton: ImageButton = binding.deleteButton

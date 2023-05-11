@@ -27,7 +27,7 @@ class FilterCategory: Filter {
         val results = FilterResults()
 
         // Value shouldn't be null and empty
-        if(constraint != null && constraint.isEmpty()) {
+        if(constraint != null && constraint.isNotEmpty()) {
 
             // Avoid case sensitivity
             constraint = constraint.toString().uppercase()

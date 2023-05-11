@@ -14,7 +14,7 @@ class ModelCategory {
     /**
      * Empty constructor is needed for Firebase
      */
-    constructor() {}
+    constructor()
 
     /**
      * Constructor with parameters
@@ -25,10 +25,6 @@ class ModelCategory {
         this.timestamp = timestamp
         this.uid = uid
     }
-
-
-
-
 
 
 }

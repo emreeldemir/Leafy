@@ -3,8 +3,14 @@ package com.emreeldemir.leafy
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import com.emreeldemir.leafy.databinding.ActivityDashboardAdminBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class DashboardAdminActivity : AppCompatActivity() {
 
@@ -17,6 +23,17 @@ class DashboardAdminActivity : AppCompatActivity() {
      * Firebase Authentication
      */
     private lateinit var firebaseAuth: FirebaseAuth
+
+    /**
+     * ArrayList to Hold Categories
+     */
+    private lateinit var categoryArrayList: ArrayList<ModelCategory>
+
+    /**
+     * Adapter
+     */
+    private lateinit var adapterCategory: AdapterCategory
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDashboardAdminBinding.inflate(layoutInflater)
@@ -28,6 +45,33 @@ class DashboardAdminActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
 
         checkUser()
+
+        loadCategories()
+
+        /**
+         * Search
+         */
+        binding.searchEditText.addTextChangedListener(object: TextWatcher {
+
+            override fun beforeTextChanged(s: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                // Called when text changed
+                try {
+                    adapterCategory.filter.filter(s)
+                }
+                catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+
+            }
+
+        })
 
         /**
          * Handle Click, Logout
@@ -43,6 +87,48 @@ class DashboardAdminActivity : AppCompatActivity() {
         binding.addCategoryButton.setOnClickListener {
             startActivity(Intent(this, CategoryAddActivity::class.java))
         }
+
+    }
+
+    private fun loadCategories() {
+        /**
+         * Init ArrayList
+         */
+        categoryArrayList = ArrayList()
+
+        /**
+         * Get All Categories from Firebase ... Firebase DB > Categories
+         */
+        val ref = FirebaseDatabase.getInstance().getReference("Categories")
+
+        ref.addValueEventListener(object : ValueEventListener {
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+            // Clear list before adding new data in it
+                categoryArrayList.clear()
+                for (ds in snapshot.children) {
+                    // Get data
+                    val model = ds.getValue(ModelCategory::class.java)
+
+                    // Add to ArrayList
+                    categoryArrayList.add(model!!)
+                }
+
+                // Setup Adapter
+                adapterCategory = AdapterCategory(this@DashboardAdminActivity, categoryArrayList)
+
+                // Set Adapter to RecyclerView
+                binding.categoriesRv.adapter = adapterCategory
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+
+            }
+
+        })
+
 
     }
 
