@@ -203,7 +203,7 @@ class PdfAddActivity : AppCompatActivity() {
                 Log.d(TAG, "uploadPdfToStorage: PDF Uploaded Now getting URL...")
 
                 // Get URL of Uploaded PDF
-                val uriTask: Task<Uri> taskSnapshot.storage.downloadUrl
+                val uriTask: Task<Uri> = taskSnapshot.storage.downloadUrl
                 while (!uriTask.isSuccessful);
                 val uploadedPdfUrl = "${uriTask.result}"
 
