@@ -81,7 +81,11 @@ class PdfAddActivity : AppCompatActivity() {
             categoryPickDialog()
         }
 
-
+        /**
+         * Handle Click, Pick PDF Intent
+         */
+        binding.pdfPickBtn.setOnClickListener {
+            pdfPickIntent()
 
     }
 
