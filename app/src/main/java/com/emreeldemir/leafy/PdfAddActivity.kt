@@ -15,11 +15,13 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import com.emreeldemir.leafy.databinding.ActivityPdfAddBinding
+import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.storage.FirebaseStorage
 
 class PdfAddActivity : AppCompatActivity() {
 
@@ -120,6 +122,9 @@ class PdfAddActivity : AppCompatActivity() {
         else if (category.isEmpty()){
             Toast.makeText(this, "Pick Category...", Toast.LENGTH_SHORT).show()
         }
+        else if (pdfUri == null){
+            Toast.makeText(this, "Pick PDF File...", Toast.LENGTH_SHORT).show()
+        }
         else{
             // All Data is Valid, Start Upload
             uploadPdfToStorage()
@@ -128,6 +133,42 @@ class PdfAddActivity : AppCompatActivity() {
     }
 
     private fun uploadPdfToStorage() {
+        Log.d(TAG, "uploadPdfToStorage: Uploading PDF to Storage")
+
+        // Show Progress
+        progressDialog.setMessage("Uploading PDF...")
+        progressDialog.show()
+
+        // Timestamp
+        val timestamp = "" + System.currentTimeMillis()
+
+        // Path of PDF in Firebase Storage
+        val filePathAndName = "Books/$timestamp"
+
+        // Storage Reference
+        val storageReference = FirebaseStorage.getInstance().getReference(filePathAndName)
+
+        // Upload PDF
+        storageReference.putFile(pdfUri!!)
+
+            .addOnSuccessListener { taskSnapshot ->
+                // PDF Uploaded, Get URL
+                Log.d(TAG, "uploadPdfToStorage: PDF Uploaded Now getting URL...")
+
+                // Get URL of Uploaded PDF
+                val uriTask: Task<Uri> taskSnapshot.storage.downloadUrl
+                while (!uriTask.isSuccessful);
+                val uploadedPdfUrl = "${uriTask.result}"
+
+               uploadPdfInfoToDb(uploadedPdfUrl, timestamp)
+
+            }
+            .addOnFailureListener { e ->
+                // PDF Upload Failed
+                Log.d(TAG, "uploadPdfToStorage: failed to upload due to  ${e.message}")
+                progressDialog.dismiss()
+                Toast.makeText(this, "Failed to upload due to  ${e.message}", Toast.LENGTH_SHORT).show()
+            }
 
     }
 
