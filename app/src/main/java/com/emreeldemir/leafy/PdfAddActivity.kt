@@ -77,6 +77,13 @@ class PdfAddActivity : AppCompatActivity() {
         progressDialog.setCanceledOnTouchOutside(false)
 
         /**
+         * Handle Click, Go Back
+         */
+        binding.backButton.setOnClickListener {
+            onBackPressed()
+        }
+
+        /**
          * Handle Click, Show Category Pick Dialog
          */
         binding.categoryTv.setOnClickListener {
@@ -129,6 +136,46 @@ class PdfAddActivity : AppCompatActivity() {
             // All Data is Valid, Start Upload
             uploadPdfToStorage()
         }
+
+    }
+
+    private fun uploadPdfInfoToDb(uploadedPdfUrl: String, timestamp: String) {
+        // Upload PDF Info to Firebase Database
+        Log.d(TAG, "uploadPdfInfoToDb: Uploading to Database")
+
+        // Show Progress
+        progressDialog.setMessage("Uploading PDF Info...")
+        progressDialog.show()
+
+        val uid = firebaseAuth.uid
+
+        // Setup Data to Upload
+        val hashMap: HashMap<String, Any> = HashMap()
+        hashMap["uid"] = "$uid"
+        hashMap["id"] = "$timestamp"
+        hashMap["title"] = "$title"
+        hashMap["description"] = "$description"
+        hashMap["categoryId"] = "$selectedCategoryId"
+        hashMap["url"] = "$uploadedPdfUrl"
+        hashMap["timestamp"] = "$timestamp"
+
+        // DB Reference DB > Books > BookId > (Book Info)
+        val ref = FirebaseDatabase.getInstance().getReference("Books")
+        ref.child(timestamp)
+            .setValue(hashMap)
+            .addOnSuccessListener {
+                // Uploaded to DB
+                Log.d(TAG, "uploadPdfInfoToDb: Uploaded to DB")
+                progressDialog.dismiss()
+                Toast.makeText(this, "Uploaded...", Toast.LENGTH_SHORT).show()
+                pdfUri = null
+            }
+            .addOnFailureListener { e ->
+                // Failed to Upload to DB
+                Log.d(TAG, "uploadPdfInfoToDb: Failed to Upload to DB due to ${e.message}")
+                Toast.makeText(this, "Failed to Upload to DB due to ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+
 
     }
 
