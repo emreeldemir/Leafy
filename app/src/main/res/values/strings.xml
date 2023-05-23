@@ -21,4 +21,5 @@
     <string name="add_a_new_category">Add a New Category</string>
     <string name="category_title">Category Title</string>
     <string name="search">Search</string>
+    <string name="add_a_new_book">Add a New Book</string>
 </resources>
