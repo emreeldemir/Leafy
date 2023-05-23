@@ -25,4 +25,5 @@
     <string name="book_description">Book Description</string>
     <string name="book_title">Book Title</string>
     <string name="book_category">Book Category</string>
+    <string name="upload">Upload</string>
 </resources>

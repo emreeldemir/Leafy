@@ -140,15 +140,16 @@
 
 
     <!-- Upload PDF Button -->
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/submitButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/categoryTv"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginTop="10dp"
-        android:text="Upload"
+        android:layout_marginTop="15dp"
+        android:text="@string/upload"
+        android:background="@drawable/submit_button_shape"
         android:textColor="@color/white"/>
 
 
