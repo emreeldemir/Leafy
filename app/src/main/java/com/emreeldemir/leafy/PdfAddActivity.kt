@@ -2,12 +2,18 @@ package com.emreeldemir.leafy
 
 import android.R
 import android.app.AlertDialog
+import android.app.Application
 import android.app.ProgressDialog
+import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
+import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.ActivityResultCallback
+import androidx.activity.result.contract.ActivityResultContracts
 import com.emreeldemir.leafy.databinding.ActivityPdfAddBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -67,6 +73,13 @@ class PdfAddActivity : AppCompatActivity() {
         progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Please wait")
         progressDialog.setCanceledOnTouchOutside(false)
+
+        /**
+         * Handle Click, Show Category Pick Dialog
+         */
+        binding.categoryTv.setOnClickListener {
+            categoryPickDialog()
+        }
 
 
 
@@ -129,6 +142,33 @@ class PdfAddActivity : AppCompatActivity() {
             .show()
 
     }
+
+    private fun pdfPickIntent() {
+        Log.d(TAG, "pdfPickIntent: Starting PDF Pick Intent")
+
+        // Intent to Pick PDF Files
+        val intent = Intent()
+        intent.type = "application/pdf"
+        intent.action = Intent.ACTION_GET_CONTENT
+        pdfActivityResultLauncher.launch(intent)
+
+
+    }
+
+    val pdfActivityResultLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult(),
+        ActivityResultCallback<ActivityResult> { result ->
+            if (result.resultCode == RESULT_OK) {
+                Log.d(TAG, "PDF Picked")
+                pdfUri = result.data!!.data
+            }
+            else {
+                Log.d(TAG, "PDF Pick cancelled")
+                Toast.makeText(this, "Cancelled", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+    )
 
 
 }
