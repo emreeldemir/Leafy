@@ -84,8 +84,50 @@ class PdfAddActivity : AppCompatActivity() {
         /**
          * Handle Click, Pick PDF Intent
          */
-        binding.pdfPickBtn.setOnClickListener {
+        binding.attachPdfButton.setOnClickListener {
             pdfPickIntent()
+        }
+
+        /**
+         * Handle Click, Start Upload PDF
+         */
+        binding.submitButton.setOnClickListener {
+            validateData()
+        }
+
+
+    }
+
+    private var title = ""
+    private var description = ""
+    private var category = ""
+    private fun validateData() {
+        // Validate Data
+        Log.d(TAG, "validateData: Validating Data")
+
+        // Get Data
+        title = binding.titleEt.text.toString().trim()
+        description = binding.descriptionEt.text.toString().trim()
+        category = binding.categoryTv.text.toString().trim()
+
+        // Validate Data
+        if (title.isEmpty()){
+            Toast.makeText(this, "Enter Title...", Toast.LENGTH_SHORT).show()
+        }
+        else if (description.isEmpty()){
+            Toast.makeText(this, "Enter Description...", Toast.LENGTH_SHORT).show()
+        }
+        else if (category.isEmpty()){
+            Toast.makeText(this, "Pick Category...", Toast.LENGTH_SHORT).show()
+        }
+        else{
+            // All Data is Valid, Start Upload
+            uploadPdfToStorage()
+        }
+
+    }
+
+    private fun uploadPdfToStorage() {
 
     }
 
@@ -121,6 +163,7 @@ class PdfAddActivity : AppCompatActivity() {
 
     private var selectedCategoryId = ""
     private var selectedCategoryTitle = ""
+
     private fun categoryPickDialog() {
         Log.d(TAG, "categoryPickDialog: Showing Dialog")
 
