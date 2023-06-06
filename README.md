@@ -16,6 +16,29 @@ All authentication, registration and data operations are done with **"Firebase"*
 
 ---
 
+### Login
+
+- Admin
+
+Email and Password:
+```
+admin@example.com
+123456
+```
+
+<br>
+
+- User
+
+Email and Password:
+```
+emre@example.com
+123456
+```
+
+
+---
+
 ### App Features:
 
 - The application is developed with "Kotlin" in "Android Studio".
