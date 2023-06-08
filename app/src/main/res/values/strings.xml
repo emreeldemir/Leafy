@@ -26,4 +26,13 @@
     <string name="book_title">Book Title</string>
     <string name="book_category">Book Category</string>
     <string name="upload">Upload</string>
+    <string name="profile">Profile</string>
+    <string name="full_name">Full Name</string>
+    <string name="account">Account</string>
+    <string name="n_a">N/A</string>
+    <string name="member">Member</string>
+    <string name="favorite_books">Favorite Books</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="name">Name</string>
+    <string name="update">Update</string>
 </resources>

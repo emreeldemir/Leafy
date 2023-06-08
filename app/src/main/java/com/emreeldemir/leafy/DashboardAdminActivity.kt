@@ -97,8 +97,12 @@ class DashboardAdminActivity : AppCompatActivity() {
         }
 
 
-
-
+        /**
+         * Handle Click, Open Profile
+         */
+        binding.profileButton.setOnClickListener {
+            startActivity(Intent(this, ProfileActivity::class.java))
+        }
 
 
 

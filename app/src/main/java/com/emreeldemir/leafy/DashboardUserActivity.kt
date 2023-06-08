@@ -3,6 +3,7 @@ package com.emreeldemir.leafy
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.emreeldemir.leafy.databinding.ActivityDashboardUserBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -38,6 +39,13 @@ class DashboardUserActivity : AppCompatActivity() {
             finish()
         }
 
+        /**
+         * Handle Click, Open Profile
+         */
+        binding.profileButton.setOnClickListener {
+            startActivity(Intent(this, ProfileActivity::class.java))
+        }
+
     }
 
     private fun checkUser() {
@@ -54,6 +62,10 @@ class DashboardUserActivity : AppCompatActivity() {
              */
             binding.subtitleTextView.text = "You are not logged in"
 
+            // Hide Profile and Logout
+            binding.profileButton.visibility = View.GONE
+            binding.logoutButton.visibility = View.GONE
+
         }
 
         else {
@@ -61,6 +73,10 @@ class DashboardUserActivity : AppCompatActivity() {
             val email = firebaseUser.email
             // Set textView in Dashboard
             binding.subtitleTextView.text = email
+
+            // Show Profile and Logout
+            binding.profileButton.visibility = View.VISIBLE
+            binding.logoutButton.visibility = View.VISIBLE
         }
     }
 }
