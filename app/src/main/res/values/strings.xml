@@ -36,5 +36,6 @@
     <string name="name">Name</string>
     <string name="update">Update</string>
     <string name="forgot_npassword">Forgot\nPassword</string>
-    <string name="forgotinfo">Enter your email address\n to reset your password</string>
+    <string name="forgot_info">Enter your email address\n to reset your password</string>
+
 </resources>
