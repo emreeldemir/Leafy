@@ -65,6 +65,13 @@ class LoginActivity : AppCompatActivity() {
             validateData()
         }
 
+        /**
+         * Handle Click, Forgot Password
+         */
+        binding.forgotTextView.setOnClickListener{
+            startActivity(Intent(this, ForgotPasswordActivity::class.java))
+        }
+
     }
 
     private fun validateData() {

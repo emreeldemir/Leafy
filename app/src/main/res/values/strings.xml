@@ -35,4 +35,6 @@
     <string name="edit_profile">Edit Profile</string>
     <string name="name">Name</string>
     <string name="update">Update</string>
+    <string name="forgot_npassword">Forgot\nPassword</string>
+    <string name="forgotinfo">Enter your email address\n to reset your password</string>
 </resources>
