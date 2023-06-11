@@ -10,7 +10,9 @@
 
 [Glide Library 🔗](https://github.com/bumptech/glide) <br>
 
-All authentication, registration and data operations are done with **"Firebase"**. <br>
+[Android PdfViewer 🔗](https://github.com/barteksc/AndroidPdfViewer) <br>
+
+All authentication, registration and data operations are done with **"Firebase"** <br>
 
 "Material Design Kit", "Material Design Icons" and various plugins were used in the design. <br>
 
