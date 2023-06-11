@@ -8,9 +8,9 @@
 
 [Mockup in Figma (with Prototype) 🔗](https://www.figma.com/file/J9oC00repkf14rg8FCGVbr/Leafy?node-id=0%3A1&t=DFxDTsPgKuQeAnCS-1) <br>
 
-[Glide Library 🔗](https://github.com/bumptech/glide) <br>
-
 [Android PdfViewer 🔗](https://github.com/barteksc/AndroidPdfViewer) <br>
+
+[Glide Library 🔗](https://github.com/bumptech/glide) <br>
 
 All authentication, registration and data operations are done with **"Firebase"** <br>
 
