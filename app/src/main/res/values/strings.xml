@@ -37,5 +37,11 @@
     <string name="update">Update</string>
     <string name="forgot_npassword">Forgot\nPassword</string>
     <string name="forgot_info">Enter your email address\n to reset your password</string>
+    <string name="books">Books</string>
+    <string name="category">Category</string>
+    <string name="the_book_title">The Book Title</string>
+    <string name="description_of_the_book">Description of the Book</string>
+    <string name="_15_mb">15 MB</string>
+    <string name="dd_mm_yyyy">DD/MM/YYYY</string>
 
 </resources>
