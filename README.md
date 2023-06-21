@@ -6,6 +6,8 @@
 
 <h3 align="center"> "Leafy" is a Library/Book application </h3>
 
+[Video Presentation 🔗](https://drive.google.com/file/d/1MXdlqFSNpq_vulTEG-IUzvqpow8XyXuQ/view?usp=sharing) <br>
+
 [Mockup in Figma (with Prototype) 🔗](https://www.figma.com/file/J9oC00repkf14rg8FCGVbr/Leafy?node-id=0%3A1&t=DFxDTsPgKuQeAnCS-1) <br>
 
 [Android PdfViewer 🔗](https://github.com/barteksc/AndroidPdfViewer) <br>
