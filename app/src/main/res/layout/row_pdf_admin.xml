@@ -21,6 +21,7 @@
 
             <!-- Pdf View -->
 
+
             <!-- Progress Bar -->
             <ProgressBar
                 android:id="@+id/progressBar"
